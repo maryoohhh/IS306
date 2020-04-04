@@ -3,7 +3,7 @@
 Chapter 1: Data and the Enterprise
 -----------------------------------------
 
-** Information is a key business resource **
+**Information is a key business resource**
 
 <dl>
     <dt>Information</dt>
