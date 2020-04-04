@@ -1,4 +1,4 @@
-# IS306-Data-Management
+# IS306 Data Management Communication and Networking
 
 Chapter 1: Data and the Enterprise
 -----------------------------------------
