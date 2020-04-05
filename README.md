@@ -68,7 +68,7 @@ Possible reasons for sharing information:
 
 **Managing data is a business issue**
 
-Special responsibilities within organization
+Special responsibilities within organization:
 * The finance department has special responsibilities for managing the organization's money including the allocation of budgets, managing investments, and accounting.
 * The personnel department has special responsibilities for managing the organization's employee base including the provision of advice on legislation affecting personnel issues and the recruitment of staff.
 * The estates department has special responsibilities for manging the building used by the organization including ensuring that the buildings meet legal requirements in respect of health and safety issues, buying, selling, and leasing of buildings and ensuring that the estate is adequately insured.
