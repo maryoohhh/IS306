@@ -30,7 +30,7 @@ This implies that some information is the result of the the translation of some 
 
 **The importance of the quality of data**
 
->Information must be up to date, complete, sufficiently accurate for the purppose it is required, unambiguously understood, consistent, and available when it is required.
+>Information must be up to date, complete, sufficiently accurate for the purpose it is required, unambiguously understood, consistent, and available when it is required.
 
 <dl>
     <dt>Good quality data</dt>
@@ -73,4 +73,4 @@ Special responsibilities within organization:
 * The personnel department has special responsibilities for managing the organization's employee base including the provision of advice on legislation affecting personnel issues and the recruitment of staff.
 * The estates department has special responsibilities for manging the building used by the organization including ensuring that the buildings meet legal requirements in respect of health and safety issues, buying, selling, and leasing of buildings and ensuring that the estate is adequately insured.
 * The stores and maintenance department has special responsibilities for managing the organization's equipment including the provisions of a central purchasing function, the accounting for the equipment in use and the storage of equipment until it is required for use.
-* the IT or IS department has special responsibility for data and information including the physical storage, distribution, security, backup, and archiving of data.
+* The IT or IS department has special responsibility for data and information including the physical storage, distribution, security, backup, and archiving of data.
