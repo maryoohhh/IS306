@@ -196,3 +196,136 @@ This sentence is constructed as follows:
 * ‘resident at’ comes from the name of the relationship at the employee end of the relationship.
 * The term ‘<ins>one and only one</ins>’ is used because there is no crow’s foot at the far end, the **PROPERTY** end, of the relationship – the absence of a crow’s foot is always read as ‘<ins>one and only one</ins>’.
 * **PROPERTY** comes from the name of the lower entity type.
+
+The **ASSIGNMENT** entity type has a relationship to the **PROJECT** entity type as well as to the **DEPARTMENT** entity type. These two relationships are crossed by an arc at the **ASSIGNMENT** entity type end, indicating that they are mutually exclusive as far as **ASSIGNMENT** is concerned.
+
+These mutually exclusive relationships are read as follows:
+
+> Each **ASSIGNMENT** <ins>must be</ins> to <ins>one and only one</ins> **DEPARTMENT** OR to <ins>one and only one</ins> **PROJECT**
+> Each **DEPARTMENT** <ins>may be</ins> staffed through <ins>one or more</ins> **ASSIGNMENTS**
+> Each **PROJECT** <ins>may be</ins> staffed through <ins>one or more</ins> **ASSIGNMENTS**
+
+**Relational data analysis**
+
+Another much more formal approach to the analysis of data requirements that relies on there being some document or other existing record (such as a program file) that lists the items of data that are to be recorded which is then analysed using this process.
+
+In the relational model of data, the data is recorded in a set of linked relations. The relation used as the main concept of the model is not the same as the relationship in a conceptual data model and it is inappropriate to use these two terms interchangeably in the data/database community, despite the fact that they are used interchangeably in general usage.
+
+A relation has two parts – a heading and a body.
+
+<dl>
+    <dt>Heading</dt>
+    <dd>consists of a set of attributes; the attribute in the relational model of data is a similar concept to the attribute we saw in the conceptual data model, although there are some differences</dd>
+    <dt>Body</dt>
+    <dd>is a set of elements that are called tuples</dd>
+    <dt>Tuple</dt>
+    <dd>a set of data values, one value for each of the attributes defined in the relation heading</dd>
+    <dd>a set of attribute-name:attribute-value pairs</dd>
+    <dd>et of values from which the individual values of an attribute may be taken is known as a domain</dd>
+</dl>
+
+![Figure 2.5 A relation shown as a table](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-5.png)
+
+There are a number of rules associated with relations and these are:
+
+* There is no significance to the order of the attributes within the relation heading; this is because the relation heading is a set of attributes and one of the properties of a mathematical set is that the elements of the set are unordered. The fact that in Figure 2.20 the attributes are arranged in a particular order from left to right is purely for presentational purposes; that order has no significance to the relation that Figure 2.20 is representing.
+* Similarly, since the body of the relation is a set of tuples, there is no significance to the order of the tuples within the body of the relation. Again the fact that in Figure 2.20 the tuples are arranged in a particular order from top to bottom is purely for presentational purposes.
+* Attributes within the relation heading should be unique; that is, there should be no duplication of attribute names within a relation.
+There should be no attributes whose values can be derived from the values taken by other attributes, whether those attributes are in the same relation or in another relation.
+* Relations have unique identifiers known as primary keys; the primary key comprises the attribute, or combination of attributes, whose values are the minimum required to uniquely identify each instance of the relation. The primary key of the relation represented in Figure 2.20 is the **Person Identifier** attribute; each person has a person identifier that is managed to be unique.
+* No two tuples in a relation may have the same value of primary key. If the **Person Identifier** attribute is the primary key of the relation representing persons, no two persons can have the same personal identifier.
+* In each tuple each part of the primary key must have a value. Every person must have a person identifier.
+y The attributes of a relation represent characteristics that are determined by the primary key; that is, they describe the ‘thing’ defined by the primary key. The name of the employee with personal identifier P6793 is Barbara Watson, her date of birth is 6 December 1952 and her national insurance number is AA756242C.
+* In any tuple no attribute may take more than one value; that is, each attribute is single-valued – there are no multiple-valued attributes within a relation.
+
+**Normalisation**
+
+> We use the process of relational data analysis – the development of a set of relations in third normal form – to develop a conceptual database design in which there will be no update anomalies when data is input into the database or later updated.
+
+In general terms this means that for any piece of information there is only one place in the database where the data representing the information can be stored and that place is unambiguously recognised. This process of relational data analysis allows us to confirm that we are associating attributes that are all about one thing (person, product and so on) or concept (promotion, order, account, transaction and so on) of interest to the business.
+
+**First normal form**
+
+> The first stage in our normalisation process is to move from this un-normalised form to produce a set of relations that are in first normal form (often abbreviated to 1NF).
+
+A relation is in first normal form if all the values taken by the attributes of that relation are atomic or scalar values – we say that the attributes are single-valued. This is to comply with the rule that there must not be any multiple-valued attributes in a relation.
+
+![Figure 2.6 The first normal form relations](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-6.png)
+
+**Second normal form**
+
+> The next stage of our relational data analysis process is to move our relations to second normal form (2NF).
+
+For a relation to be in second normal form it has to be in first normal form and, in addition, it must meet the condition that every attribute that is not part of the primary key is dependent on the whole of the primary key. More formally a relation is in second normal form if and only if it is in first normal form and every non-key attribute is irreducibly dependent on the primary key.
+
+![Figure 2.7 The second normal form relations](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-7.png)
+
+**Third normal form**
+
+> We now need to move our relations from second normal form to third normal form (3NF).
+
+For a relation to be in third normal form it has to be in second normal form and also has to meet the condition that every attribute that is not part of the primary key is not dependent on an attribute that is also not part of the primary key. More formally a relation is in third normal form if and only if it is in second normal form and every non- key attribute is nontransitively dependent on the primary key.
+
+![Figure 2.8 The third normal form relations](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-8.png)
+
+**Further normal forms**
+
+<dl>
+    <dt>Candidate keys</dt>
+    <dd>all possible primary keys</dd>
+    <dd>choice of which candidate key to use as a primary key is sometimes quite arbitrary, although there is often a clear preferred option</dd>
+    <dt>Alternate keys</dt>
+    <dd>candidate keys not selected to be the primary key</dd>
+</dl>
+
+> Boyce–Codd normal form is really just a stricter form of third normal form.
+
+For most practical purposes Boyce–Codd normal form and third normal form are equivalent. The only exceptions occur when there are two or more candidate keys, where those candidate keys are composed of more than one attribute and where the multi-attribute keys overlap (that is, they share a common attribute). In this situation it is possible for update anomalies to occur at third normal form, but not if the relations are restructured to be in Boyce–Codd normal form.
+
+![Figure 2.9 The employee interview relation](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-9.png)
+
+This relation has three candidate keys as follows:
+* **Interviewee Payroll Number** and **Interview Date**;
+* **Interviewer Payroll Number**, **Interview Date** and **Interview Time**;
+* **Room Number**, **Interview Date** and **Interview Time**.
+
+![Figure 2.10 The equivalent Boyce-Codd normal form relations](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-10.png)
+
+The first of these two relations has the following candidate keys:
+* **Interviewee Payroll Number** and **Interview Date**, allowing us to determine the interview time and the payroll number of the interviewer;
+* **Interviewer Payroll Number**, **Interview Date** and **Interview Time**, allowing us to determine the payroll number of the interviewee.
+
+<dl>
+    <dt>Surrogate keys</dt>
+    <dd>many database developers prefer to use a meaningless primary key instead of constructing a primary key from real-world attributes such as **Payroll Number**, **Surname**, **Other Names** and **Date of Birth**</dd>
+    <dd>if surrogate keys are to be used, it is still sensible to use relational data analysis to check normalisation using candidate keys involving appropriate real-world attributes</dd>
+</dl>
+
+**Roles of data model**
+
+> Conceptual data models can be developed to understand the information requirements of a business and to form the basis for a physical database design to support the business.
+
+A conceptual data model that is to be used to understand the information requirements of a business, or a business area, should be the result of the analysis of those information requirements alone. No design considerations should be included in the model. The model should be the result of pure analysis, untainted by design.
+
+**Physical database design**
+
+This ‘physical database design’ process has two stages:
+* **first-cut database design** - the aim is to use the conceptual constructs of the logical-level schema of the target database management system to develop a design that matches the conceptual data model as closely as possible
+* **optimised database design** - may be necessary for the database designer to enhance or move away from the first-cut design to improve the performance of the database
+
+The two main strategies for improving performance of a database are to:
+* make use of the built-in facilities of the database management system;
+> Two facilities provided by most database management systems are the ability to cluster data and the ability to create indexes.
+
+**Data clustering** means arranging data on the disk in such a way that logically related data is placed as closely together as possible. This improves performance because fewer disk access requests are required to answer queries on the database or to update data.
+
+An **index** provides the database management system with an alternative way to access data other than searching through all the physical records associated with a particular logical table. A database index is analogous to the index at the back of this book. It enables the database management system to know where to go to access any particular piece of data. An index may be built on a single column or on multiple columns from the same table. Using an index improves retrieval performance by reducing the number of disk accesses required to query the data. Database update is, however, slowed down if data is indexed; each database update requires updating the index (which normally requires some restructuring of the complete index) as well as updating the main data file.
+
+> Changes to the clustering of data and the addition or removal of indexes are the equivalent of altering the schema at the internal level of the three-level architecture.
+
+These changes can be made without affecting the schema at the logical level and without affecting the application processes.
+
+* compromise on the design of the logical schema
+> A compromise to the design of the logical schema affects data independence. Such a compromise is often called **denormalisation**.
+
+The rationale for this is that it provides only one place to store any item of data, reducing data redundancy and eliminating the possibility of data inconsistency (at least within that single database). This means, however, that data that may be logically related is dispersed throughout the database. Collecting this dispersed data together to answer any particular query can require a large number of disk access requests, which can in turn impact performance. Denormalisation can involve returning ‘repeating groups’ to their master table (or relation). It can also mean joining two tables that are often queried together. Introducing new columns to hold data that can be derived from other data already held elsewhere in the database can also be considered as denormalisation. An example of this would be the recording of the total cost of an order where the costs of the individual items ordered are already recorded. While denormalisation can improve retrieval performance, it can slow down update performance (data needs to be recorded in more than one place) and introduce the possibility of inconsistency (because the users or the application programs need to manage the duplicated updates). Denormalisation should, therefore, be avoided if possible; if used, all decisions to denormalise should be carefully documented.
