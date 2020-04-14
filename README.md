@@ -26,7 +26,7 @@ This implies that some information is the result of the the translation of some 
     <dd>covers all forms of data but, importantly, includes data held in information systems used to support the activities of an organization of all levels: operational, managerial, and strategic</dd>
 </dl>
 
-![Figure 1.1 The relationship between data and information](https://github.com/maryoohhh/IS306/blob/master/Screen%20Shot%202020-04-05%20at%204.17.09%20PM.png)
+![Figure 1.1 The relationship between data and information](https://github.com/maryoohhh/IS306/blob/master/Images/Figure1-1.png)
 
 **The importance of the quality of data**
 
@@ -74,3 +74,113 @@ Special responsibilities within organization:
 * The estates department has special responsibilities for manging the building used by the organization including ensuring that the buildings meet legal requirements in respect of health and safety issues, buying, selling, and leasing of buildings and ensuring that the estate is adequately insured.
 * The stores and maintenance department has special responsibilities for managing the organization's equipment including the provisions of a central purchasing function, the accounting for the equipment in use and the storage of equipment until it is required for use.
 * The IT or IS department has special responsibility for data and information including the physical storage, distribution, security, backup, and archiving of data.
+
+Chapter 2: Database Development
+---------------------------------
+
+**File Systems**
+
+Before the advent of databases, any data that was required by an application program was stored in specially constructed files designed for and associated with the application programs. Each of these files would contain many records, with each record being collection of data values held in fields within the record. Each application programs becomes closely coupled to its data structure.
+
+**Database Approach**
+
+<dl>
+    <dt>Database</dt>
+    <dd>an organised way of keeping records in a computer system</dd>
+    <dd>provide a means of overcoming the problems caused by storing data in files that are closely coupled with applications program</dd>
+</dt>
+
+![Figure 2.1 A model of a database system](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-1.png)
+
+Model shows a number of user processes interacting with the general-purpose DBMS. It also shows that the DBMS interacts with two 'datastores', physical storage areas for data in files. One datastore is the database itself, providing persistent storage of the data required by the various user processes. The other datastore contains the data definition.
+
+<dl>
+    <dt>Schema</dt>
+    <dd>set of data definitions</dd>
+    <dd>contains the specification of the properties of all data in the associated database</dd>
+    <dd>used by the DBMS to determine how the data in the associated database is to be processed</dd>
+    <dd>is independent of the DBMS and the user processes and is normally expressed in terms of easily understood conceptual constructs</dd>
+</dt>
+
+> The data definitions are, therefore, not embedded in the application programs.
+
+Advantages of database approach assuming database are properly designed and used:
+* **Data independence** - there is a layer of software, the database management system, between the users and their applications and the stored data; this layer of software insulates the users from changes to the way that data is physically stored.
+* **Integration and sharing of data** – a database can store all the data needed by many different business areas so that many users from different business areas can access the same database.
+* **Consistency of data** – with the data being integrated in a database, the data inconsistency problems associated with separate application-specific data files are prevented.
+* **Minimal data redundancy** – with many applications sharing an integrated set of data, the redundancy of data caused by duplication is avoided; there may, however, be some planned and controlled data duplication to meet specific requirements.
+* **Uniform security and integrity controls** – since the controls necessary to maintain the security and integrity of the data are handled by the database management system software, these controls are applied uniformly to all users of the database. Security and integrity are explained in more detail in Chapter 8.
+* **Data accessibility and responsiveness** – within the database there may be many different ways to access any required set of data; it is even possible to answer ad hoc queries in addition to the pre-planned queries encoded in the application programs.
+* **Ease of application development and reduced program maintenance** – the application developers and those responsible for the future maintenance of those applications do not need to know and understand the way that the data is physically stored; instead, they only need to understand the conceptual constructs used in the schema.
+
+Common functions that should be provided by all database management systems:
+
+* **Data definition** – the ability to use easily understood conceptual constructs to define the way that the data is to be organised and structured within the database.
+* **Constraint definition and enforcement** – the ability to define semantic constraints on the data (for example restrictions that are to be applied to data values) and then to enforce those constraints universally.
+* **Access control** – the ability to define the rights of users to access all or some of the data and to prevent access by users without the appropriate rights.
+* **Data manipulation** – the ability to retrieve and update data as well as the ability to perform calculations and structuring for presentation purposes.
+* **Restructuring and reorganisation** – the ability to change a database in some way, either to logically restructure – that is, to change, add or delete some element of the data structure – or to physically reorganise how the data is stored – for example to add an index.
+* **Transaction support** – the ability to ensure that a database is in a consistent state both before and after a transaction has been completed.
+* **Concurrency support** – the ability to allow many user processes – and, therefore, many users – to access a database at the same time without conflict or interference.
+* **Recovery** – the ability to return the database to a usable state after a hardware or software failure, including the return of the database to a consistent state if a transaction fails to complete.
+
+> The first of these functions of a database management system is the ability to define the way that the data is to be conceptually organised and structured within the database. This is the ability to define the database schema.
+
+**The three-level schema architecture**
+
+![Figure 2.2 The three-level schema architecture](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-2.png)
+
+The **schema at the logical level** is the central, and main, component of the architecture. It defines the properties of all the data. It includes the data definitions and the associated constraints, using the appropriate conceptual constructs – tables, object classes and so forth – appropriate to the database management system being used.
+
+The **schema at the internal level** defines how the database is physically stored in files and how these files are accessed. The addition of indexes to speed retrieval may be viewed as an addition to the internal or storage schema.
+
+**Each schema at the external level** defines the data required to support one or more user processes. Each schema at the external level may be viewed as a subset or an abstraction of the schema at the logical level, although it is not necessary for the same conceptual constructs to be used at both the logical and external levels.
+
+<dl>
+    <dt>Physical data independence</dt>
+    <dd>separation between the schema at the logical level, where the data is conceptually visualised – tables and columns, object classes and so forth – and the schema at the internal level – where the way that the data is actually stored is known – provides a level of data independence</dd>
+</dl>
+
+**An overview of the database development process**
+
+An important part of the overall development process is to understand and document those requirements so that the information system that is developed and eventually delivered does in fact help the users by meeting their requirements.
+
+So for each system there are three facets that need to be considered: the information (or its associated data), the processes and the timing or sequencing.
+
+![Figure 2.3 A simplified view of the database development process](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-3.png)
+
+<dl>
+    <dt>Physical design</dt>
+    <dd>developing a schema using the appropriate conceptual constructs for the proposed database management system</dd>
+    <dt>Script</dt>
+    <dd>a listing in plain text of the commands needed by the database management system to build the database</dd>
+    <dt>Small system</dt>
+    <dd>a system to support a small, clearly defined community of users</dd>
+    <dd>a data model developed purely from the perspective of the small part of the business that the information system will be developed to support</dd>
+    <dd>takes no account of any corporate need to share information across the enterprise</dd>
+    <dt>Entity</dt>
+    <dd>an instance of an entity type, is usually defined as ‘something of significance to the business about which information is to be recorded’</dd>
+    <dd>‘something’ may be physical, such as an employee or an item of equipment, or it may be conceptual, such as an order (although there may be a physical representation of the order on a piece of paper)</dd>
+    <dd>may even be details of the specification of something else about which information is to be recorded</dd>
+    <dt>Attribute</dt>
+    <dd>a ‘detail that serves to qualify, identify, classify, quantify or express the state of an entity’</dd>
+    <dt>Relationship</dt>
+    <dd>is simply defined as ‘an association between two entity types’</dd>
+    <dd>may exist between instances of the same entity type known as **recursive relationship**</dd>
+    <dd>‘an association between two entity types, or between one entity type and itself’.</dd>
+</dl>
+
+![Figure 2.4 A conceptual data model diagram](https://github.com/maryoohhh/IS306/blob/master/Images/Figure2-4.png)
+
+For example, consider the relationship between property and employee that is introduced in Figure 2.4. Reading this relationship from bottom to top – say from property to employee – we have the sentence:
+
+> Each **PROPERTY** <ins>may be</ins> home address for <ins>one or more</ins> **EMPLOYEES**
+
+I have used text formatting, bold small capitals, underlining and italics, to indicate the different elements of the sentence, which is constructed using the following rules:
+
+* The word ‘Each’ is used because the box with the word ‘property’ inside it is an entity type (that is, it represents all instances of the type – all the properties) but we want to refer to a single instance of the type (that is, a single property).
+* ‘Each’ is followed by the name of the entity type at the end from which we are starting the sentence – in this case property.
+* The term ‘may be’ is used because not every property has to be the home address for an employee – this is represented on the diagram by a dotted line at the property end of the relationship; a dotted line is always read as ‘may be’.
+* ‘home address for’ comes from the name of the relationship at the property end of the relationship.
+* The term ‘one or more’ is used because there is an inverted three-pronged arrowhead (known as a crow’s foot) at the employee end of the relationship – a crow’s foot is always read as ‘one or more’.
+* The sentence ends with the name of the entity type at the end of the line; we make it plural so that the sentence reads easily, in this case employees.
