@@ -176,11 +176,23 @@ For example, consider the relationship between property and employee that is int
 
 > Each **PROPERTY** <ins>may be</ins> home address for <ins>one or more</ins> **EMPLOYEES**
 
-I have used text formatting, bold small capitals, underlining and italics, to indicate the different elements of the sentence, which is constructed using the following rules:
+The use of text formatting, bold small capitals, underlining and italics, to indicate the different elements of the sentence, which is constructed using the following rules:
 
 * The word ‘Each’ is used because the box with the word ‘property’ inside it is an entity type (that is, it represents all instances of the type – all the properties) but we want to refer to a single instance of the type (that is, a single property).
-* ‘Each’ is followed by the name of the entity type at the end from which we are starting the sentence – in this case property.
-* The term ‘may be’ is used because not every property has to be the home address for an employee – this is represented on the diagram by a dotted line at the property end of the relationship; a dotted line is always read as ‘may be’.
-* ‘home address for’ comes from the name of the relationship at the property end of the relationship.
-* The term ‘one or more’ is used because there is an inverted three-pronged arrowhead (known as a crow’s foot) at the employee end of the relationship – a crow’s foot is always read as ‘one or more’.
-* The sentence ends with the name of the entity type at the end of the line; we make it plural so that the sentence reads easily, in this case employees.
+* ‘Each’ is followed by the name of the entity type at the end from which we are starting the sentence – in this case **PROPERTY**.
+* The term ‘<ins>may be</ins>’ is used because not every property has to be the home address for an employee – this is represented on the diagram by a dotted line at the **PROPERTY** end of the relationship; a dotted line is always read as ‘<ins>may be</ins>’.
+* ‘home address for’ comes from the name of the relationship at the **PROPERTY** end of the relationship.
+* The term ‘<ins>one or more</ins>’ is used because there is an inverted three-pronged arrowhead (known as a crow’s foot) at the **EMPLOYEE** end of the relationship – a crow’s foot is always read as ‘<ins>one or more</ins>’.
+* The sentence ends with the name of the entity type at the end of the line; we make it plural so that the sentence reads easily, in this case **EMPLOYEES**.
+
+Each relationship should also be read in the opposite direction. Reading the relationship from top to bottom – from employee to property – we have the sentence:
+
+> Each **EMPLOYEE** <ins>must be</ins> resident at <ins>one and only one</ins> **PROPERTY**
+
+This sentence is constructed as follows:
+* ‘Each’ because we want to refer to a single instance of the type.
+* **EMPLOYEE** from the name of the upper entity type.
+* ‘<ins>must be</ins>’ because every employee has to be resident at a property (their home address) – this is represented on the diagram by the solid line at the **EMPLOYEE** end of the relationship and a solid line is always read as ‘<ins>must be</ins>’.
+* ‘resident at’ comes from the name of the relationship at the employee end of the relationship.
+* The term ‘<ins>one and only one</ins>’ is used because there is no crow’s foot at the far end, the **PROPERTY** end, of the relationship – the absence of a crow’s foot is always read as ‘<ins>one and only one</ins>’.
+* **PROPERTY** comes from the name of the lower entity type.
