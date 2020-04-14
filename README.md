@@ -202,7 +202,9 @@ The **ASSIGNMENT** entity type has a relationship to the **PROJECT** entity type
 These mutually exclusive relationships are read as follows:
 
 > Each **ASSIGNMENT** <ins>must be</ins> to <ins>one and only one</ins> **DEPARTMENT** OR to <ins>one and only one</ins> **PROJECT**
+
 > Each **DEPARTMENT** <ins>may be</ins> staffed through <ins>one or more</ins> **ASSIGNMENTS**
+
 > Each **PROJECT** <ins>may be</ins> staffed through <ins>one or more</ins> **ASSIGNMENTS**
 
 **Relational data analysis**
