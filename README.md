@@ -341,6 +341,7 @@ There are a number of questions to be addressed when embarking on the developmen
 * **What is the definition of ‘corporate’?** - means the entire enterprise
 * **What is ‘corporate data’?** - covers all of the enterprise’s data requirements
 * **Is the corporate data model to be used as ...**
+
 **... a business model?** - expresses a view of data from the perspective of the business
 
 **... a database design model?** - any optimisation to enhance the performance of one application program will almost certainly adversely affect the performance of other application programs
