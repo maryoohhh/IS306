@@ -331,3 +331,74 @@ These changes can be made without affecting the schema at the logical level and 
 > A compromise to the design of the logical schema affects data independence. Such a compromise is often called **denormalisation**.
 
 The rationale for this is that it provides only one place to store any item of data, reducing data redundancy and eliminating the possibility of data inconsistency (at least within that single database). This means, however, that data that may be logically related is dispersed throughout the database. Collecting this dispersed data together to answer any particular query can require a large number of disk access requests, which can in turn impact performance. Denormalisation can involve returning ‘repeating groups’ to their master table (or relation). It can also mean joining two tables that are often queried together. Introducing new columns to hold data that can be derived from other data already held elsewhere in the database can also be considered as denormalisation. An example of this would be the recording of the total cost of an order where the costs of the individual items ordered are already recorded. While denormalisation can improve retrieval performance, it can slow down update performance (data needs to be recorded in more than one place) and introduce the possibility of inconsistency (because the users or the application programs need to manage the duplicated updates). Denormalisation should, therefore, be avoided if possible; if used, all decisions to denormalise should be carefully documented.
+
+Chapter 4: Corporate Data Modelling
+-----------------------------------
+
+> Irrespective of the reason for the development of the corporate data model, the 'corporate data model initiative' will only be successful if the intended role of the corporate data model is clearly understood across the whole enterprise.
+
+There are a number of questions to be addressed when embarking on the development of a corporate data model:
+* **What is the definition of ‘corporate’?** - means the entire enterprise
+* **What is ‘corporate data’?** - covers all of the enterprise’s data requirements
+* **Is the corporate data model to be used as ...*
+**... a business model?** - expresses a view of data from the perspective of the business
+**... a database design model?** - any optimisation to enhance the performance of one application program will almost certainly adversely affect the performance of other application programs
+**... an interface design model?** - provides a standard with which all information systems must comply at their interfaces with other information systems. The intention is not to direct the design of the databases in the individual information systems, thus preventing optimisation to enhance performance, but to direct how data must be presented to other information systems when there is a requirement to share data with them
+
+**THE NATURE OF A CORPORATE DATA MODEL**
+
+Any requirement to store new ‘data items’ or to change the ‘business rules’ that apply to information or data means a change to the conceptual data model, with subsequent changes to the database structure and the application programs that access the structure.
+
+The problem is often compounded because a database supporting a single system is normally optimised to improve the performance of the applications developed for that system.
+
+In the worst case, the scale of the changes to the system required when the business processes change may be so prohibitively costly, in both time and money, that the systems start to constrain rather than enhance the business.
+
+The scope of a corporate data model must extend beyond a single information system or business area. In my view any attempt to produce a corporate data model using an approach similar to the development of the conceptual data model of a single project is bound to fail, especially if the purpose of the initiative is to develop a corporate data model that forms the basis of the database design for all future systems. There are two interrelated reasons for this:
+* Since the complexity of the corporate data model is proportional to the complexity of the enterprise, for a very complex organisation the corporate data model could be exceedingly large and exceedingly complex, requiring many years (or decades) of development. It is also very probable that because of its complexity and its size the finished product will be unintelligible to all except those who have been intimately involved in its development.
+* Physical database design and application development must be postponed until the development of the corporate data model is completed. If it is not, the organisation will be continuously developing legacy systems as the development of the corporate data model overtakes the development of the systems.
+
+A corporate data model, by definition, has to cover many different business areas. If the corporate data model is to be used as the basis for all future database design, it also has to be stable. A corporate data model, therefore, has to cope with:
+* the different, sometimes conflicting, uses of information and data required by the different business areas;
+* the uncertain nature of the future information and data requirements across the enterprise.
+
+Information and data is used in many different ways by the many disparate business areas within an enterprise. In the development of a conceptual data model to support all of an enterprise’s activity – to inform the development of a large number of inter-operating systems – I believe that it will become necessary to develop a data model that is ever more generic or abstract in nature. Examples of the different uses of information that lead to this increasing ‘genericity’ of a corporate data model include:
+* Differences between departments over the meaning of the term ‘customer’
+* Overlapping roles
+
+**HOW TO DEVELOP A CORPORATE DATA MODEL**
+
+* **Attribute-trawling approach**
+
+This approach involves studying all the existing information systems, collecting the data definitions from those systems (which are probably not documented, so will need to be extracted from the schema definitions held by the database management system) and, once all the definitions are collected, sorting them out so that good, reusable definitions are obtained.
+
+There are three major problems with this approach:
+* There may be some areas of the enterprise or some business processes that are not currently supported by information systems; there will, in consequence, be a gap in the analysis.
+* It is well known that many information systems do not actually meet the users’ expectations or needs; the data definitions gathered during this exercise will, therefore, be of dubious quality.
+* It is unclear how the data definitions will be analysed and compared; there may just be too many to be handled without automated support and such support is not readily available.
+
+* **Joining project or area models**
+
+This approach involves the independent modelling of the information or data requirements of the separate business areas within the enterprise.
+
+The reason for failures is exactly because the models are developed independently of each other. Although the models may have been developed to common standards, the reason for the failure is the absence of a common ‘theme’ in the models. There are often no easily identifiable common points where the models could join. What is needed is a common theme.
+
+* **Building top-down**
+
+Building top-down implies the development of a single conceptual data model that, from its inception, is intended to cover the complete information and data requirements of the whole enterprise.
+
+The best approach is to build the corporate data model ‘top- down’, starting from a core or framework model that represents the major objects and concepts of the business. It can then be used as a skeleton and ‘fleshed out’ with the requirements of the individual project or business areas.
+
+**CORPORATE DATA MODEL PRINCIPLES**
+
+* **develop the model ‘top-down’;**
+* **give primacy to the core business;**
+It is only possible to give primacy to the core business if that core business is clearly defined. For some enterprises this is not so and it is difficult to identify an initial focus for the modelling effort.
+The developers of the corporate data model need to be aware that by giving primacy to the ‘core business’ there is a danger of the model becoming too focused, thus making it extremely difficult to include other business areas within the model later on.
+* **cover the whole enterprise;**
+Despite giving primacy to the core business, a corporate data model must be able to support the information needs across the full breadth of the enterprise. This ensures that the model covers all business viewpoints and that no data requirements are missed.
+* **future-proof the model;**
+The model must, therefore, represent the true underlying nature of the information and data used in the business and not how that information or data is used at the time of the analysis. Provided there are no major changes of business purpose, the underlying nature of the information or data used in the business is unlikely to change, but the way that information and data is used and processed is often subject to change.
+* **develop co-operatively;**
+Co-operation is essential. The data modellers must consult widely with subject-matter experts in the various business areas in the enterprise and with the technical people who are familiar with the existing information systems or who will be responsible for the development of future systems.
+* **gain consensus, not perfection.**
+The team should be prepared to publish and support a model that is deemed to be ‘fit for role’ by all business areas, even if it is not perfect.
