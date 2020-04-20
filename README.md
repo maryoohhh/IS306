@@ -340,9 +340,11 @@ Chapter 4: Corporate Data Modelling
 There are a number of questions to be addressed when embarking on the development of a corporate data model:
 * **What is the definition of ‘corporate’?** - means the entire enterprise
 * **What is ‘corporate data’?** - covers all of the enterprise’s data requirements
-* **Is the corporate data model to be used as ...*
+* **Is the corporate data model to be used as ...**
 **... a business model?** - expresses a view of data from the perspective of the business
+
 **... a database design model?** - any optimisation to enhance the performance of one application program will almost certainly adversely affect the performance of other application programs
+
 **... an interface design model?** - provides a standard with which all information systems must comply at their interfaces with other information systems. The intention is not to direct the design of the databases in the individual information systems, thus preventing optimisation to enhance performance, but to direct how data must be presented to other information systems when there is a requirement to share data with them
 
 **THE NATURE OF A CORPORATE DATA MODEL**
@@ -392,13 +394,22 @@ The best approach is to build the corporate data model ‘top- down’, starting
 
 * **develop the model ‘top-down’;**
 * **give primacy to the core business;**
+
 It is only possible to give primacy to the core business if that core business is clearly defined. For some enterprises this is not so and it is difficult to identify an initial focus for the modelling effort.
 The developers of the corporate data model need to be aware that by giving primacy to the ‘core business’ there is a danger of the model becoming too focused, thus making it extremely difficult to include other business areas within the model later on.
+
 * **cover the whole enterprise;**
+
 Despite giving primacy to the core business, a corporate data model must be able to support the information needs across the full breadth of the enterprise. This ensures that the model covers all business viewpoints and that no data requirements are missed.
+
 * **future-proof the model;**
+
 The model must, therefore, represent the true underlying nature of the information and data used in the business and not how that information or data is used at the time of the analysis. Provided there are no major changes of business purpose, the underlying nature of the information or data used in the business is unlikely to change, but the way that information and data is used and processed is often subject to change.
+
 * **develop co-operatively;**
+
 Co-operation is essential. The data modellers must consult widely with subject-matter experts in the various business areas in the enterprise and with the technical people who are familiar with the existing information systems or who will be responsible for the development of future systems.
+
 * **gain consensus, not perfection.**
+
 The team should be prepared to publish and support a model that is deemed to be ‘fit for role’ by all business areas, even if it is not perfect.
