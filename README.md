@@ -414,3 +414,87 @@ Co-operation is essential. The data modellers must consult widely with subject-m
 * **gain consensus, not perfection.**
 
 The team should be prepared to publish and support a model that is deemed to be ‘fit for role’ by all business areas, even if it is not perfect.
+
+Chapter 5: Data Definitions and Naming
+--------------------------------------
+
+**Elements of a Data Definition**
+
+The elements of such a data definition framework could include:
+
+* a name or label;
+
+* any synonyms or aliases;
+
+* a description or significance statement; y formats;
+
+* valid value lists or validation criteria;
+
+* valid operations;
+
+* ownership details;
+
+* usage details;
+
+* source;
+
+* comments;
+
+* configuration information.
+
+Each data item should also have a comprehensive and accurate description of the item. It is preferable if the description is held in the form of a significance statement – a statement of why the data item is deemed to be significant to the business. 
+
+**Data Naming Conventions**
+
+The typical data naming convention that I describe provides names for ‘data items’ constructed of three terms:
+
+* a mandatory prime term that provides the context of the data, which normally means the entity type or table holding the ‘data item’;
+
+* one or more optional modifier terms that are used to make the meaning of the data explicit;
+
+* a mandatory class term that indicates the ‘class’ of the data.
+
+**Problems associated with data naming conventions**
+
+There are basically two problems with data naming conventions: they can be over- prescriptive and they may not deliver what is expected.
+
+Chapter 10: Database Administration
+-----------------------------------
+
+**DBA Responsibilities**
+
+Database administrators are responsible for:
+
+* development and maintenance of technical standards covering the database administration function;
+
+* physical database design;
+
+* the management of the database management system software;
+
+* database administration education and training.
+
+**DBA Duties**
+
+The duties of a database administrator include:
+
+* management of the security of the database through the correct establishment of new users, the granting of appropriate access rights to users (see Chapter 8) and the investigation of security breaches;
+
+* monitoring of the performance of the database and tuning to improve performance where necessary;
+
+* guarding against catastrophic database failures by taking regular database backups (see Chapter 8) and rehearsing the associated recovery procedures;
+
+* management of upgrades or changes to the database management system software, for example to take account of new features provided by the software.
+
+**Performance Monitoring and Tuning**
+
+The following actions within the control of the database administrator may be used to alter performance:
+
+* the allocation of memory as buffer, or data cache, to store data that is often queried, to reduce the number of disk reads required;
+
+* the allocation of tables, or parts of tables, to files and the allocation of those files to disk space;
+
+* the extent to which database transactions are logged; writing to a log consumes resources, but logs are essential in the event that the database needs to be recovered;
+
+* the application of locks in multiuser situations so that when a user is accessing some data, that data is locked to prevent another user reading incomplete data or attempting to apply a conflicting update; minimising the possibility of deadlocks (two or more applications holding locks on data that others need to be able to proceed); or reducing the timeout interval (the time an application process can be suspended);
+
+* the use of indexes and the clustering of data as discussed in Chapter 2.
