@@ -685,3 +685,66 @@ This recognises that any data model for a specific business area or set of busin
 6. The sixth process, P6, is about effecting a cultural transformation so that there can be a long-term improvement in information and data quality.
 
 ![Figure 7.4 The TEN STEPS process](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-4.png)
+
+Chapter 9: Master data management
+---------------------------------
+
+**What is master data?**
+
+At its most basic, master data management seeks to ensure that an organisation uses only one version of its ‘master data’ for all of its operations.
+
+![Figure 9.1 The six data layers](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-1.png)
+
+Metadata describes the types of data stored in a database, such as the table and column definitions for a database schema and the associated constraint definitions.
+
+Reference data consists of the codes and their associated descriptions that are used to categorise other data found in a database or, perhaps, for relating data in a database to information found outside the organisation. The tables that hold this data may be called ‘lookup tables’. 
+
+Transaction structure data represents the direct participants in a transaction such as suppliers, customers and products. Information about a transaction cannot be recorded unless the details of these participants already exist in the database.
+
+Enterprise structure data is data that describes the structure of the enterprise, for example the organisational structure or the financial structure.
+
+Transaction activity data is that data that is seen by many people as the prime purpose of information technology: the recording of the transactions or operations that are carried out by the organisation.
+
+Transaction audit data is the data that keeps track of each transaction. This often involves the use of logs.
+
+![Figure 9.2 Different data categories](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-2.png)
+
+![Figure 9.3 The three master data layers](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-3.png)
+
+![Figure 9.4 The relationship between business processes and master data](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-4.png)
+
+**How do problems with master data occur**
+
+Problems with what should be considered as master data occur because of two interrelated problems: the ‘silo’ mentality that exists in many organisations and the independent development of systems to support different ‘silos’.
+
+The ‘silo’ mentality is common in many organisations where groups of employees concentrate on their own function within the organisation.
+
+Information technology systems to support the different functions within an organisation are often independently designed or procured ‘off the shelf’. In each of these systems data will be defined and stored in different ways.
+
+All of this can lead to inconsistent results.
+
+With master data management we are concentrating the efforts of data management on the data with the highest value to the organisation.
+
+**How do we manage master data**
+
+The main technological tool that can be used for the management of master data is the Master Data Management (MDM) Hub, a database and software with two roles: to manage the master data that is stored in the database and to keep it synchronised with the transactional systems that use the master data.
+
+![Figure 9.5 The MDM hub](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-5.png)
+
+Taking this approach has some advantages such as:
+
+* All systems use the same master data; there is no duplication.
+
+* Duplicate information is easily detected since there is only one place where the master information is held.
+
+However, there are disadvantages such as:
+
+* It may not be possible to change the existing systems to use the new master data.
+
+* The data model for the MDM Hub may be very large and complex.
+
+* Not all of the systems that use the master data will need all of the attributes that have been included in the MDM Hub.
+
+This approach has the advantage that no change to the existing system is required. Against this, the main disadvantage of this approach is that every query against master data results in a distributed query across all of the existing systems that contain the master data.
+
+Another disadvantage of this approach is the need to know about all of the existing systems before implementing the MDM Hub. This can be overcome by developing the hub with a more generic structure but queries will then be more complex.
