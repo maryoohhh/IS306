@@ -493,8 +493,258 @@ The following actions within the control of the database administrator may be us
 
 * the allocation of tables, or parts of tables, to files and the allocation of those files to disk space;
 
-* the extent to which database transactions are logged; writing to a log consumes resources, but logs are essential in the event that the database needs to be recovered;
+* the extent to which database transactions are logged; writing to a log consumes resources, butcd  logs are essential in the event that the database needs to be recovered;
 
 * the application of locks in multiuser situations so that when a user is accessing some data, that data is locked to prevent another user reading incomplete data or attempting to apply a conflicting update; minimising the possibility of deadlocks (two or more applications holding locks on data that others need to be able to proceed); or reducing the timeout interval (the time an application process can be suspended);
 
 * the use of indexes and the clustering of data as discussed in Chapter 2.
+
+Chapter 3: What is Data Management
+-----------------------------------
+
+At its simplest, data management is the management of data, information represented in a formalised manner suitable for communication, interpretation or processing.
+
+> Data management is a corporate service which helps with the provision of information services by controlling or co-ordinating the definitions and usage of reliable and relevant data.
+
+Without effective enterprise-wide data management in place within the organisation:
+* The information systems within the enterprise cannot be interfaced.
+
+* Data is not shared between the information systems.
+
+* Communication breaks down and information gets lost.
+
+* Data is unnecessarily transcribed and rekeyed.
+
+* The wheel keeps being reinvented.
+
+* The competitive edge of the organisation is reduced.
+
+* Frustration sets in. 
+
+The requirement for information is changing all the time. Where data is poorly or ambiguously defined, it may be difficult to respond to requests for new information or information presented in a different manner. Real business opportunities may be lost as a result of the inability to respond quickly to changing requirements.
+
+**Data management responsibilities**
+
+From the BCS Data Management Specialist Group definition it can be deduced that data management is a corporate service that:
+
+* **strategically** supports the corporate definition, management and use of business data;
+
+* **operationally** supports the development and maintenance of computerised information systems.
+
+The key areas amongst these responsibilities are:
+
+* achieving recognition of data, both structured and unstructured, as an enterprise-wide valuable business resource;
+
+* improving the quality of the data held within the enterprise’s information systems and ensuring that there are procedures in place to maintain the quality of the data;
+
+* facilitating information sharing across the business by the provision of corporate data definitions and support to the teams involved in systems development to ensure that these definitions are used;
+
+* making the various levels of management within the business accountable for the development and ownership of data definitions – it is within the business, not in IT or IS, that the real meaning of data and information is known;
+
+* achieving a single source for reference data to support all the information systems within the enterprise – this includes internal reference data such as product codes and prices as well as external reference data such as UN country codes.
+
+**Data management activities**
+
+To fulfil the above responsibilities, the data management function needs to identify the specific activities that it needs to carry out and then obtain sufficient resources to perform the activities. These activities are shown in Figure 3.1.
+
+![Figure 3.1 Data management activities](https://github.com/maryoohhh/IS306/blob/master/Images/Figure3-1.png)
+
+One of the principal tasks of data management is to develop the corporate data definitions for the organisation. Key to this is the development of a data model or a set of data models that encapsulate all of the business organisation’s information needs.
+
+If data management is to be successful, it must influence the way that data is defined and handled in any new or replacement systems. It is very important, therefore, that the staff who are charged with the responsibility for data management interact with and support the staff involved in developing future information systems. 
+
+![Figure 3.2 Data management deliverables](https://github.com/maryoohhh/IS306/blob/master/Images/Figure3-2.png)
+
+**Roles within data management**
+
+![Figure 3.3 The relationship between data management and information management](https://github.com/maryoohhh/IS306/blob/master/Images/Figure3-3.png)
+
+**The benefits of data management**
+
+Every organisation is different. It is useful to consider the potential benefits in two areas:
+
+* those that are business related;
+
+* those that are related to information technology and systems
+
+**The relationship between data management and enterprise architecture**
+
+There are a number of enterprise architecture frameworks publicly available including:
+
+* US Department of Defense Architecture Framework (DoDAF);
+
+* UK Ministry of Defence Architecture Framework (MODAF);
+
+* Open Group Architecture Framework (TOGAF);
+
+* Framework for Enterprise Architecture developed by John Zachman (also commonly known as the Zachman Framework).
+
+The columns of the Framework for Enterprise Architecture are:
+
+* the ‘what’ – the ‘inventory sets’ of the enterprise – this is the perspective that looks at the information and its representation as data used by the enterprise;
+
+* the ‘how’ – the ‘process flows’ of the enterprise;
+
+* the ‘where’ – the ‘distribution networks’ of the enterprise;
+
+* the ‘who’ – the ‘responsibility assignments’ of the enterprise;
+
+* the ‘when’ – the ‘timing cycles’ of the enterprise;
+
+* the ‘why’ – the ‘motivation intentions’ of the enterprise.
+
+The first five rows of the Framework for Enterprise Architecture are:
+
+* the ‘executive perspective’ – the view of the business context planners with models for each column that document the scope of the enterprise;
+
+* the ‘business management perspective’ – the view of the business concept owners with models for each column that document the business concepts within the enterprise, the business definition models;
+
+* the ‘architect perspective’ – the view of the business logic designers with models for each column that document the system logic within the enterprise, the system representation models;
+
+* the ‘engineer perspective’ – the view of the business physics builders with models for each column that document the technology of the enterprise, the technology specification models;
+
+* the ‘technician perspective’ – the view of the business component implementers with models for each column that document the tools of the enterprise, the tool configuration models.
+
+Chapter 7: Data Quality
+------------------------
+
+> The word quality means different things in different contexts.
+
+**Issues associated with poor data quality**
+
+These are:
+
+* transaction rework costs, for example needing a department to deal with mishandled orders and shipments;
+
+* costs incurred in implementing new systems, for example errors in data increase the cost of implementing an enterprise data warehouse;
+
+* delays in delivering data to decision makers, for example having to manually massage information before it can be released to managers;
+
+* lost customers through poor service, for example customers not returning because of receiving incorrect shipments;
+
+* lost production through supply-chain problems, for example the wrong quantity of parts is ordered from a supplier.
+
+**Causes of poor data quality**
+
+Poor-quality data can arise for a number of reasons, some technical and some human (although even the technical reasons can probably be traced back to some human error):
+
+* databases having inappropriate schemas;
+
+* errors being made on data entry;
+
+* data decaying over time;
+
+* data being corrupted when moved between systems;
+
+* lack of understanding of the data when it is used.
+
+Databases must be designed with flexibility and data quality in mind, even if this is at the expense of performance.
+
+**The dimensions of data quality**
+
+There are two main dimensions of data quality – completeness and correctness. Completeness assesses the extent to which the data reflects the real-world situation. Correctness, on the other hand, assesses whether the data complies with the appropriate constraints and validation rules and whether it accurately reflects the real-world situation.
+
+![Figure 7.1 The dimensions of data quality](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-1.png)
+
+* **Input validation** – ensuring wherever possible that data is validated on input; it should be impossible to input an invalid date such as 35 October 2006 or to input a birth date for an employee that would imply that they were only two years of age when they started their employment with the company.
+
+* **Integrity** – ensuring that data meets all the data integrity rules; no payroll numbers are duplicated for example.
+
+* **Currency** – ensuring that data is up to date; that changes in employee circumstances have been recorded.
+
+* **Duplication** – ensuring that there is no logical duplication of data and that any physical duplication is properly managed.
+
+* **Inconsistency** – ensuring that data remains consistent; this is generally achieved by managing duplication correctly.
+
+**Data model quality**
+
+An easily applied qualitative model for the assessment of the quality of a data model amongst those reviewed in Information and Database Quality is that proposed by Michael Reingruber and William Gregory in The Data Modeling Handbook, which is shown in Figure 7.2.
+
+![Figure 7.2 The five dimensions of data model quality](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-2.png)
+
+In this model Reingruber and Gregory have augmented the correctness and completeness dimensions with two further orthogonal dimensions – the syntactic dimension and the semantic dimension. The syntactic dimension addresses how the modelling language and its syntax have been used while the semantic dimension addresses the relationship between the model and the data requirements of the business area that the model represents.
+
+Applying these orthogonal dimensions together we get the four dimensions of syntactic correctness, syntactic completeness, conceptual correctness and conceptual completeness. Reingruber and Gregory have added a fifth overarching dimension that they call enterprise awareness.
+
+This recognises that any data model for a specific business area or set of business processes should be seen as a subset of the enterprise or corporate data model. It is the enterprise awareness dimension that is most often overlooked by data modellers working as part of project teams involved in the development of information systems.
+
+**Improving data quality**
+
+![Figure 7.3 Total quality data management methodology](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-3.png)
+
+1. The first process, P1, looks at the quality of the design of the databases (that is, the quality of the data definitions) and of the overall information architecture, both from a technical perspective and from a customer-satisfaction perspective.
+
+2. The second process, P2, looks at the data itself. Again there is a technical perspective – does the data comply with the rules – and a customer-satisfaction perspective.
+
+3.  The third process, P3, measures the costs of the poor-quality information in terms of reduced profit and revenue.
+
+4. The fourth process, P4, cleans the existing data, giving corrected and good-quality data.
+
+5. The fifth process, P5, improves the enduring information processes to ensure that the data is maintained at good quality.
+
+6. The sixth process, P6, is about effecting a cultural transformation so that there can be a long-term improvement in information and data quality.
+
+![Figure 7.4 The TEN STEPS process](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-4.png)
+
+Chapter 9: Master data management
+---------------------------------
+
+**What is master data?**
+
+At its most basic, master data management seeks to ensure that an organisation uses only one version of its ‘master data’ for all of its operations.
+
+![Figure 9.1 The six data layers](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-1.png)
+
+Metadata describes the types of data stored in a database, such as the table and column definitions for a database schema and the associated constraint definitions.
+
+Reference data consists of the codes and their associated descriptions that are used to categorise other data found in a database or, perhaps, for relating data in a database to information found outside the organisation. The tables that hold this data may be called ‘lookup tables’. 
+
+Transaction structure data represents the direct participants in a transaction such as suppliers, customers and products. Information about a transaction cannot be recorded unless the details of these participants already exist in the database.
+
+Enterprise structure data is data that describes the structure of the enterprise, for example the organisational structure or the financial structure.
+
+Transaction activity data is that data that is seen by many people as the prime purpose of information technology: the recording of the transactions or operations that are carried out by the organisation.
+
+Transaction audit data is the data that keeps track of each transaction. This often involves the use of logs.
+
+![Figure 9.2 Different data categories](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-2.png)
+
+![Figure 9.3 The three master data layers](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-3.png)
+
+![Figure 9.4 The relationship between business processes and master data](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-4.png)
+
+**How do problems with master data occur**
+
+Problems with what should be considered as master data occur because of two interrelated problems: the ‘silo’ mentality that exists in many organisations and the independent development of systems to support different ‘silos’.
+
+The ‘silo’ mentality is common in many organisations where groups of employees concentrate on their own function within the organisation.
+
+Information technology systems to support the different functions within an organisation are often independently designed or procured ‘off the shelf’. In each of these systems data will be defined and stored in different ways.
+
+All of this can lead to inconsistent results.
+
+With master data management we are concentrating the efforts of data management on the data with the highest value to the organisation.
+
+**How do we manage master data**
+
+The main technological tool that can be used for the management of master data is the Master Data Management (MDM) Hub, a database and software with two roles: to manage the master data that is stored in the database and to keep it synchronised with the transactional systems that use the master data.
+
+![Figure 9.5 The MDM hub](https://github.com/maryoohhh/IS306/blob/master/Images/Figure9-5.png)
+
+Taking this approach has some advantages such as:
+
+* All systems use the same master data; there is no duplication.
+
+* Duplicate information is easily detected since there is only one place where the master information is held.
+
+However, there are disadvantages such as:
+
+* It may not be possible to change the existing systems to use the new master data.
+
+* The data model for the MDM Hub may be very large and complex.
+
+* Not all of the systems that use the master data will need all of the attributes that have been included in the MDM Hub.
+
+This approach has the advantage that no change to the existing system is required. Against this, the main disadvantage of this approach is that every query against master data results in a distributed query across all of the existing systems that contain the master data.
+
+Another disadvantage of this approach is the need to know about all of the existing systems before implementing the MDM Hub. This can be overcome by developing the hub with a more generic structure but queries will then be more complex.
