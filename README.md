@@ -605,3 +605,83 @@ The first five rows of the Framework for Enterprise Architecture are:
 
 * the ‘technician perspective’ – the view of the business component implementers with models for each column that document the tools of the enterprise, the tool configuration models.
 
+Chapter 7: Data Quality
+------------------------
+
+> The word quality means different things in different contexts.
+
+**Issues associated with poor data quality**
+
+These are:
+
+* transaction rework costs, for example needing a department to deal with mishandled orders and shipments;
+
+* costs incurred in implementing new systems, for example errors in data increase the cost of implementing an enterprise data warehouse;
+
+* delays in delivering data to decision makers, for example having to manually massage information before it can be released to managers;
+
+* lost customers through poor service, for example customers not returning because of receiving incorrect shipments;
+
+* lost production through supply-chain problems, for example the wrong quantity of parts is ordered from a supplier.
+
+**Causes of poor data quality**
+
+Poor-quality data can arise for a number of reasons, some technical and some human (although even the technical reasons can probably be traced back to some human error):
+
+* databases having inappropriate schemas;
+
+* errors being made on data entry;
+
+* data decaying over time;
+
+* data being corrupted when moved between systems;
+
+* lack of understanding of the data when it is used.
+
+Databases must be designed with flexibility and data quality in mind, even if this is at the expense of performance.
+
+**The dimensions of data quality**
+
+There are two main dimensions of data quality – completeness and correctness. Completeness assesses the extent to which the data reflects the real-world situation. Correctness, on the other hand, assesses whether the data complies with the appropriate constraints and validation rules and whether it accurately reflects the real-world situation.
+
+![Figure 7.1 The dimensions of data quality](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-1.png)
+
+* **Input validation** – ensuring wherever possible that data is validated on input; it should be impossible to input an invalid date such as 35 October 2006 or to input a birth date for an employee that would imply that they were only two years of age when they started their employment with the company.
+
+* **Integrity** – ensuring that data meets all the data integrity rules; no payroll numbers are duplicated for example.
+
+* **Currency** – ensuring that data is up to date; that changes in employee circumstances have been recorded.
+
+* **Duplication** – ensuring that there is no logical duplication of data and that any physical duplication is properly managed.
+
+* **Inconsistency** – ensuring that data remains consistent; this is generally achieved by managing duplication correctly.
+
+**Data model quality**
+
+An easily applied qualitative model for the assessment of the quality of a data model amongst those reviewed in Information and Database Quality is that proposed by Michael Reingruber and William Gregory in The Data Modeling Handbook, which is shown in Figure 7.2.
+
+![Figure 7.2 The five dimensions of data model quality](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-2.png)
+
+In this model Reingruber and Gregory have augmented the correctness and completeness dimensions with two further orthogonal dimensions – the syntactic dimension and the semantic dimension. The syntactic dimension addresses how the modelling language and its syntax have been used while the semantic dimension addresses the relationship between the model and the data requirements of the business area that the model represents.
+
+Applying these orthogonal dimensions together we get the four dimensions of syntactic correctness, syntactic completeness, conceptual correctness and conceptual completeness. Reingruber and Gregory have added a fifth overarching dimension that they call enterprise awareness.
+
+This recognises that any data model for a specific business area or set of business processes should be seen as a subset of the enterprise or corporate data model. It is the enterprise awareness dimension that is most often overlooked by data modellers working as part of project teams involved in the development of information systems.
+
+**Improving data quality**
+
+![Figure 7.3 Total quality data management methodology](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-3.png)
+
+1. The first process, P1, looks at the quality of the design of the databases (that is, the quality of the data definitions) and of the overall information architecture, both from a technical perspective and from a customer-satisfaction perspective.
+
+2. The second process, P2, looks at the data itself. Again there is a technical perspective – does the data comply with the rules – and a customer-satisfaction perspective.
+
+3.  The third process, P3, measures the costs of the poor-quality information in terms of reduced profit and revenue.
+
+4. The fourth process, P4, cleans the existing data, giving corrected and good-quality data.
+
+5. The fifth process, P5, improves the enduring information processes to ensure that the data is maintained at good quality.
+
+6. The sixth process, P6, is about effecting a cultural transformation so that there can be a long-term improvement in information and data quality.
+
+![Figure 7.4 The TEN STEPS process](https://github.com/maryoohhh/IS306/blob/master/Images/Figure7-4.png)
