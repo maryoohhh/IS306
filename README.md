@@ -493,8 +493,115 @@ The following actions within the control of the database administrator may be us
 
 * the allocation of tables, or parts of tables, to files and the allocation of those files to disk space;
 
-* the extent to which database transactions are logged; writing to a log consumes resources, but logs are essential in the event that the database needs to be recovered;
+* the extent to which database transactions are logged; writing to a log consumes resources, butcd  logs are essential in the event that the database needs to be recovered;
 
 * the application of locks in multiuser situations so that when a user is accessing some data, that data is locked to prevent another user reading incomplete data or attempting to apply a conflicting update; minimising the possibility of deadlocks (two or more applications holding locks on data that others need to be able to proceed); or reducing the timeout interval (the time an application process can be suspended);
 
 * the use of indexes and the clustering of data as discussed in Chapter 2.
+
+Chapter 3: What is Data Management
+-----------------------------------
+
+At its simplest, data management is the management of data, information represented in a formalised manner suitable for communication, interpretation or processing.
+
+> Data management is a corporate service which helps with the provision of information services by controlling or co-ordinating the definitions and usage of reliable and relevant data.
+
+Without effective enterprise-wide data management in place within the organisation:
+* The information systems within the enterprise cannot be interfaced.
+
+* Data is not shared between the information systems.
+
+* Communication breaks down and information gets lost.
+
+* Data is unnecessarily transcribed and rekeyed.
+
+* The wheel keeps being reinvented.
+
+* The competitive edge of the organisation is reduced.
+
+* Frustration sets in. 
+
+The requirement for information is changing all the time. Where data is poorly or ambiguously defined, it may be difficult to respond to requests for new information or information presented in a different manner. Real business opportunities may be lost as a result of the inability to respond quickly to changing requirements.
+
+**Data management responsibilities**
+
+From the BCS Data Management Specialist Group definition it can be deduced that data management is a corporate service that:
+
+* **strategically** supports the corporate definition, management and use of business data;
+
+* **operationally** supports the development and maintenance of computerised information systems.
+
+The key areas amongst these responsibilities are:
+
+* achieving recognition of data, both structured and unstructured, as an enterprise-wide valuable business resource;
+
+* improving the quality of the data held within the enterprise’s information systems and ensuring that there are procedures in place to maintain the quality of the data;
+
+* facilitating information sharing across the business by the provision of corporate data definitions and support to the teams involved in systems development to ensure that these definitions are used;
+
+* making the various levels of management within the business accountable for the development and ownership of data definitions – it is within the business, not in IT or IS, that the real meaning of data and information is known;
+
+* achieving a single source for reference data to support all the information systems within the enterprise – this includes internal reference data such as product codes and prices as well as external reference data such as UN country codes.
+
+**Data management activities**
+
+To fulfil the above responsibilities, the data management function needs to identify the specific activities that it needs to carry out and then obtain sufficient resources to perform the activities. These activities are shown in Figure 3.1.
+
+![Figure 3.1 Data management activities](https://github.com/maryoohhh/IS306/blob/master/Images/Figure3-1.png)
+
+One of the principal tasks of data management is to develop the corporate data definitions for the organisation. Key to this is the development of a data model or a set of data models that encapsulate all of the business organisation’s information needs.
+
+If data management is to be successful, it must influence the way that data is defined and handled in any new or replacement systems. It is very important, therefore, that the staff who are charged with the responsibility for data management interact with and support the staff involved in developing future information systems. 
+
+![Figure 3.2 Data management deliverables](https://github.com/maryoohhh/IS306/blob/master/Images/Figure3-2.png)
+
+**Roles within data management**
+
+![Figure 3.3 The relationship between data management and information management](https://github.com/maryoohhh/IS306/blob/master/Images/Figure3-3.png)
+
+**The benefits of data management**
+
+Every organisation is different. It is useful to consider the potential benefits in two areas:
+
+* those that are business related;
+
+* those that are related to information technology and systems
+
+**The relationship between data management and enterprise architecture**
+
+There are a number of enterprise architecture frameworks publicly available including:
+
+* US Department of Defense Architecture Framework (DoDAF);
+
+* UK Ministry of Defence Architecture Framework (MODAF);
+
+* Open Group Architecture Framework (TOGAF);
+
+* Framework for Enterprise Architecture developed by John Zachman (also commonly known as the Zachman Framework).
+
+The columns of the Framework for Enterprise Architecture are:
+
+* the ‘what’ – the ‘inventory sets’ of the enterprise – this is the perspective that looks at the information and its representation as data used by the enterprise;
+
+* the ‘how’ – the ‘process flows’ of the enterprise;
+
+* the ‘where’ – the ‘distribution networks’ of the enterprise;
+
+* the ‘who’ – the ‘responsibility assignments’ of the enterprise;
+
+* the ‘when’ – the ‘timing cycles’ of the enterprise;
+
+* the ‘why’ – the ‘motivation intentions’ of the enterprise.
+
+The first five rows of the Framework for Enterprise Architecture are:
+
+* the ‘executive perspective’ – the view of the business context planners with models for each column that document the scope of the enterprise;
+
+* the ‘business management perspective’ – the view of the business concept owners with models for each column that document the business concepts within the enterprise, the business definition models;
+
+* the ‘architect perspective’ – the view of the business logic designers with models for each column that document the system logic within the enterprise, the system representation models;
+
+* the ‘engineer perspective’ – the view of the business physics builders with models for each column that document the technology of the enterprise, the technology specification models;
+
+* the ‘technician perspective’ – the view of the business component implementers with models for each column that document the tools of the enterprise, the tool configuration models.
+
